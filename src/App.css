@@ -1,38 +1,56 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  height: 10vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-bottom: 5px solid white;
+  position: sticky;
+  top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.citytextbox {
+  height: 7vh;
+  width: 80vw;
+  font-size: 2rem;
+  text-align: center;
 }
 
-.App-header {
+.suggestionWrapper {
+  height: 30vh;
+  background-color: red;
+  overflow-y: scroll;
+  border: 1px solid lightblue;
+}
+
+.suggestion:hover {
+  color: blue;
+  cursor: pointer;
+}
+.suggestion {
+  background-color: white;
+  width: 80vw;
+  color: black;
+  height: 5vh;
+  border: 1px solid lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app_body {
+  margin-top: 5vh;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
