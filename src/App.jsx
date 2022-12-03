@@ -49,6 +49,7 @@ function App() {
     }, 1000);
 
     return () => clearTimeout(getDataAfterTimeout);
+    //eslint-disable-next-line
   }, [city]);
 
   return (
