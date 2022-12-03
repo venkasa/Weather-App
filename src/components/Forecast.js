@@ -50,7 +50,7 @@ const Forecast = ({ city, forecast: { forecastday } }) => {
                 return (
                   <div className="hourtrack">
                     <b>{index}:00</b>
-                    <img src={curHourForecast.condition.icon} />
+                    <img src={curHourForecast.condition.icon} alt="" />
                     <div className="progress">
                       <LinearProgress
                         variant="determinate"
