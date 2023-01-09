@@ -37,7 +37,10 @@ function App() {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin":
+              "https://venkatesh-weather-app.netlify.app/",
+            Origin: "https://venkatesh-weather-app.netlify.app/",
+            Referer: "https://venkatesh-weather-app.netlify.app/",
           },
         });
         const data = await resp.json();
