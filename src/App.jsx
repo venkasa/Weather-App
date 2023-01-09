@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Current from "./components/Current";
 import Forecast from "./components/Forecast";
@@ -7,8 +6,10 @@ import Forecast from "./components/Forecast";
 const autoCompleteURL = (city) =>
   `http://api.weatherapi.com/v1/search.json?key=5a666c7ade504a60a5b42431222709&q=${city}`;
 
-const weatherURL = (city) =>
-  `http://api.weatherapi.com/v1/forecast.json?key=5a666c7ade504a60a5b42431222709&q=${city}&days=7&aqi=no&alerts=no`;
+const weatherURL = (
+  city
+) => `https://api.weatherapi.com/v1/forecast.json?key=5a666c7ade504a60a5b42431222709&q=${city}&days=7&aqi=no&alerts=no
+`;
 
 function App() {
   const [city, setCity] = useState("");
@@ -27,22 +28,12 @@ function App() {
     setCurrent(data.current);
     setForecast(data.forecast);
     setLocation(data.location.name);
-    console.log(data);
   };
 
   useEffect(() => {
     const getDataAfterTimeout = setTimeout(() => {
       const fetchCitySuggestion = async () => {
-        const resp = await fetch(autoCompleteURL(city), {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":
-              "https://venkatesh-weather-app.netlify.app/",
-            Origin: "https://venkatesh-weather-app.netlify.app/",
-            Referer: "https://venkatesh-weather-app.netlify.app/",
-          },
-        });
+        const resp = await fetch(autoCompleteURL(city));
         const data = await resp.json();
         const citySuggestionData = data.map(
           (curData) => `${curData.name}, ${curData.region}, ${curData.country}`
